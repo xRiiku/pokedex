@@ -1,6 +1,6 @@
-import PokemonList from './hooks/fetch'
 import { Logo } from './components/logo'
 import './App.css'
+import LeagueSelector from './components/LeagueSelector'
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
     <div className="App">
       <Logo/>
-      <PokemonList/>
+      <LeagueSelector/>
     </div>
   ) 
 

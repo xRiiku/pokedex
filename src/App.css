@@ -113,8 +113,9 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 10px;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 3rem;
+	text-align: center;
 }
 
 .logo {
@@ -122,6 +123,10 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 3rem;
+}
+
+.selector-container button{
+font-size: 30pt;
 }
 
 

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { firstUpper } from '../helper/helper.js'
 
 
-function PokemonList() {
+function Kalos() {
   const [pokemonList, setPokemonList] = useState([]);
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=71&offset=649')
       .then(response => response.json())
       .then(data => setPokemonList(data.results))
       .catch(error => console.error(error));
@@ -56,4 +56,4 @@ export function Pokemon({ url }) {
   );
 }
 
-export default PokemonList;
+export default Kalos;
