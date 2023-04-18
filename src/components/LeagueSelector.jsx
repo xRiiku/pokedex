@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './LeagueSelector.css'
 import Kanto from '../hooks/Kanto-1gen'
 import Jhoto from '../hooks/Jhoto-2gen'
 import Hoenn from '../hooks/Hoenn-3gen'
@@ -23,79 +23,131 @@ const LeagueSelector = () => {
 
     function handleClickKanto() {
         setKantoVisible(true);
+        setJhotoVisible(false);
+        setHoennVisible(false);
+        setSinnohVisible(false);
+        setTeseliaVisible(false);
+        setKalosVisible(false);
+        setAlolaVisible(false);
+        setGalarVisible(false);
+        setOtherVisible(false);
+        
     }
     function handleClickJhoto() {
         setJhotoVisible(true);
+        setKantoVisible(false);
+        setHoennVisible(false);
+        setSinnohVisible(false);
+        setTeseliaVisible(false);
+        setKalosVisible(false);
+        setAlolaVisible(false);
+        setGalarVisible(false);
+        setOtherVisible(false);
     }
     function handleClickHoenn() {
         setHoennVisible(true);
+        setKantoVisible(false);
+        setJhotoVisible(false);
+        setSinnohVisible(false);
+        setTeseliaVisible(false);
+        setKalosVisible(false);
+        setAlolaVisible(false);
+        setGalarVisible(false);
+        setOtherVisible(false);
     }
     function handleClickSinnoh() {
         setSinnohVisible(true);
+        setKantoVisible(false);
+        setJhotoVisible(false);
+        setHoennVisible(false);
+        setTeseliaVisible(false);
+        setKalosVisible(false);
+        setAlolaVisible(false);
+        setGalarVisible(false);
+        setOtherVisible(false);
     }
     function handleClickTeselia() {
         setTeseliaVisible(true);
+        setKantoVisible(false);
+        setJhotoVisible(false);
+        setHoennVisible(false);
+        setSinnohVisible(false);
+        setKalosVisible(false);
+        setAlolaVisible(false);
+        setGalarVisible(false);
+        setOtherVisible(false);
     }
     function handleClickKalos() {
         setKalosVisible(true);
+        setKantoVisible(false);
+        setJhotoVisible(false);
+        setHoennVisible(false);
+        setSinnohVisible(false);
+        setTeseliaVisible(false);
+        setAlolaVisible(false);
+        setGalarVisible(false);
+        setOtherVisible(false);
     }
     function handleClickAlola() {
         setAlolaVisible(true);
+        setKantoVisible(false);
+        setJhotoVisible(false);
+        setHoennVisible(false);
+        setSinnohVisible(false);
+        setTeseliaVisible(false);
+        setKalosVisible(false);
+        setGalarVisible(false);
+        setOtherVisible(false);
     }
     function handleClickGalar() {
         setGalarVisible(true);
+        setKantoVisible(false);
+        setJhotoVisible(false);
+        setHoennVisible(false);
+        setSinnohVisible(false);
+        setTeseliaVisible(false);
+        setKalosVisible(false);
+        setAlolaVisible(false);
+        setOtherVisible(false);
     }
     function handleClickOther() {
         setOtherVisible(true);
+        setKantoVisible(false);
+        setJhotoVisible(false);
+        setHoennVisible(false);
+        setSinnohVisible(false);
+        setTeseliaVisible(false);
+        setKalosVisible(false);
+        setAlolaVisible(false);
+        setGalarVisible(false);
     }
 
     return (
         <div className='selector-container'>
+            <div className='buttons'>
+                <button className='kantoBtn' onClick={handleClickKanto}>KANTO</button>
+                <button className='jhotoBtn' onClick={handleClickJhoto}>JHOTO</button>
+                <button className='hoennBtn' onClick={handleClickHoenn}>HOENN</button>
+                <button className='sinnohBtn' onClick={handleClickSinnoh}>SINNOH</button>
+                <button className='teseliaBtn' onClick={handleClickTeselia}>TESELIA</button>
+                <button className='kalosBtn' onClick={handleClickKalos}>KALOS</button>
+                <button className='alolaBtn' onClick={handleClickAlola}>ALOLA</button>
+                <button className='galarBtn' onClick={handleClickGalar}>GALAR</button>
+                <button className='othersBtn' onClick={handleClickOther}>OTHERS</button>
+            </div>
 
-        <div>
-        <button onClick={handleClickKanto}>KANTO</button>
-        {KantoVisible && <Kanto />}
-        </div>
+            <div className='pokemons'>
+                {KantoVisible && <Kanto />}
+                {JhotoVisible && <Jhoto />}
+                {HoennVisible && <Hoenn />}
+                {SinnohVisible && <Sinnoh />}
+                {TeseliaVisible && <Teselia />}
+                {KalosVisible && <Kalos />}
+                {AlolaVisible && <Alola />}
+                {GalarVisible && <Galar />}
+                {OtherVisible && <Other />}
+            </div>
 
-        <div>
-        <button onClick={handleClickJhoto}>JHOTO</button>
-        {JhotoVisible && <Jhoto />}
-        </div>
-
-        <div>
-        <button onClick={handleClickHoenn}>HOENN</button>
-        {HoennVisible && <Hoenn />}
-        </div>
-
-        <div>
-        <button onClick={handleClickSinnoh}>SINNOH</button>
-        {SinnohVisible && <Sinnoh />}
-        </div>
-
-        <div>
-        <button onClick={handleClickTeselia}>TESELIA</button>
-        {TeseliaVisible && <Teselia />}
-        </div>
-
-        <div>
-        <button onClick={handleClickKalos}>KALOS</button>
-        {KalosVisible && <Kalos />}
-        </div>
-
-        <div>
-        <button onClick={handleClickAlola}>ALOLA</button>
-        {AlolaVisible && <Alola />}
-        </div>
-
-        <div>
-        <button onClick={handleClickGalar}>GALAR</button>
-        {GalarVisible && <Galar />}
-        </div>
-
-        <div>
-        <button onClick={handleClickOther}>OTHERS</button>
-        {OtherVisible && <Other />}
-        </div>
 
         </div>
     );

@@ -1,0 +1,53 @@
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 3rem;
+    
+}
+
+.buttons button{
+    color: white;
+    border: solid 2px black;
+    cursor: pointer;
+}
+
+.buttons button:hover{
+    opacity: 0.7;
+}
+
+.kantoBtn{
+    background-color: rgb(245, 167, 225);
+}
+
+.jhotoBtn{
+    background-color: rgb(114, 243, 114);
+}
+
+.hoennBtn {
+    background-color: rgb(224, 179, 93);
+}
+
+.sinnohBtn{
+    background-color: rgb(143, 143, 143);
+}
+
+.teseliaBtn{
+    background-color: #848064;
+}
+
+.kalosBtn{
+    background-color: #792329;
+}
+
+.alolaBtn{
+    background-color: rgb(71, 70, 70); 
+}
+
+.galarBtn{
+    background-color: #545F9D;
+}
+
+.othersBtn{
+    background-color: black;
+}
