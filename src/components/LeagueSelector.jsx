@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import './LeagueSelector.css'
-import Kanto from '../hooks/Kanto-1gen'
-import Jhoto from '../hooks/Jhoto-2gen'
-import Hoenn from '../hooks/Hoenn-3gen'
-import Sinnoh from '../hooks/Sinnoh-4gen'
-import Teselia from '../hooks/Teselia-5gen'
-import Kalos from '../hooks/Kalos-6gen'
-import Alola from '../hooks/Alola-7gen'
-import Galar from '../hooks/Galar-8gen'
-import Other from '../hooks/Other-9gen'
+import Pokedex from '../hooks/Pokedex';
+
 
 const LeagueSelector = () => {
     const [KantoVisible, setKantoVisible] = useState(false);
@@ -137,15 +130,15 @@ const LeagueSelector = () => {
             </div>
 
             <div className='pokemons'>
-                {KantoVisible && <Kanto />}
-                {JhotoVisible && <Jhoto />}
-                {HoennVisible && <Hoenn />}
-                {SinnohVisible && <Sinnoh />}
-                {TeseliaVisible && <Teselia />}
-                {KalosVisible && <Kalos />}
-                {AlolaVisible && <Alola />}
-                {GalarVisible && <Galar />}
-                {OtherVisible && <Other />}
+                {KantoVisible && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=151"/>}
+                {JhotoVisible && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=100&offset=151"/>}
+                {HoennVisible && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=135&offset=251"/>}
+                {SinnohVisible && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=107&offset=386"/>}
+                {TeseliaVisible && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=156&offset=493"/>}
+                {KalosVisible && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=71&offset=649"/>}
+                {AlolaVisible && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=81&offset=721"/>}
+                {GalarVisible && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=96&offset=802"/>}
+                {OtherVisible && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=0&offset=898"/>}
             </div>
 
 
