@@ -32,7 +32,7 @@ const LeagueSelector = () => {
                 {visible === 'kalos' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=71&offset=649"/>}
                 {visible === 'alola' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=81&offset=721"/>}
                 {visible === 'galar' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=96&offset=802"/>}
-                {visible === 'others' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=0&offset=898"/>}
+                {visible === 'others' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=1000&offset=898"/>}
             </div>
         </div>
     );

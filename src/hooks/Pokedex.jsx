@@ -37,7 +37,7 @@ function Pokedex(props) {
         <span className="pokemon-id">Nº {pokemonData.id}</span>
         <div className="card-img">
             <img
-            src={pokemonData.sprites.other.dream_world.front_default}
+            src={pokemonData.sprites.other.home.front_default}
             alt={`Pokemon ${pokemonData?.name}`}
             />
         </div>
