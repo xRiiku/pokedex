@@ -1,17 +1,33 @@
 import React, { useState } from 'react';
 import './LeagueSelector.css'
-import Pokedex from '../hooks/Pokedex';
+import Pokedex, { Pokemon } from '../hooks/Pokedex';
 
 
 const LeagueSelector = () => {
     const [visible, setVisible] = useState('');
-
+    const [searchPokemon, setSearchPokemon] = useState('');
+    
     const handleClick = (name) => {
         setVisible(name);
+        setSearchPokemon('')
     }
 
     return (
         <div className='selector-container'>
+
+            <div className='search'>
+            <label> Search Pokemon</label>
+                <input
+                    type="text"
+                    value={searchPokemon}
+                    placeholder='Name or number'
+                    onChange={(e) => {
+                    setSearchPokemon(e.target.value);
+                    setVisible('');
+                    }}
+                />
+            </div>
+
             <div className='buttons'>
                 <button className='kantoBtn'  onClick={() => handleClick('kanto')}>KANTO</button>
                 <button className='jhotoBtn'  onClick={() => handleClick('jhoto')}>JHOTO</button>
@@ -23,6 +39,10 @@ const LeagueSelector = () => {
                 <button className='galarBtn'  onClick={() => handleClick('galar')}>GALAR</button>
                 <button className='othersBtn'  onClick={() => handleClick('others')}>OTHERS</button>
             </div>
+
+            <div className={searchPokemon !== '' ? 'pokemonsSearchActive' : 'pokemonSearchHidden'}>
+                {searchPokemon !== '' && <Pokemon url={`https://pokeapi.co/api/v2/pokemon/${searchPokemon.toLowerCase()}`}/>}
+            </div>
             <div className='pokemons'>
                 {visible === 'kanto' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=151"/>}
                 {visible === 'jhoto' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=100&offset=151"/>}
@@ -33,6 +53,7 @@ const LeagueSelector = () => {
                 {visible === 'alola' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=81&offset=721"/>}
                 {visible === 'galar' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=96&offset=802"/>}
                 {visible === 'others' && <Pokedex url="https://pokeapi.co/api/v2/pokemon?limit=1000&offset=898"/>}
+                
             </div>
         </div>
     );
