@@ -27,7 +27,7 @@ function Pokedex(props) {
         fetch(url)
         .then((response) => response.json())
         .then((data) => setPokemonData(data))
-        .catch((error) => alert('Pokemon Not found'));
+        .catch((error) => console.error(error));
     }, [url]);
 
     if (!pokemonData) return <div> Loading...</div>;
