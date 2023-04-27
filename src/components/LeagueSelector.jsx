@@ -25,6 +25,10 @@ const LeagueSelector = () => {
                     placeholder='Name or number'
                     onChange={(e) => {
                         setTempSearchPokemon(e.target.value);
+
+                        if(e.target.value <1 || e.target.value > 1010 || e.target.value < 10001){
+                            setSearchPokemon('')
+                        }
                     }}
                     
                 />
