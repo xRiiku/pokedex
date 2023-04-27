@@ -6,6 +6,8 @@ import Pokedex, { Pokemon } from '../hooks/Pokedex';
 const LeagueSelector = () => {
     const [visible, setVisible] = useState('');
     const [searchPokemon, setSearchPokemon] = useState('');
+    const [tempSearchPokemon, setTempSearchPokemon] = useState('');
+    
     
     const handleClick = (name) => {
         setVisible(name);
@@ -17,15 +19,21 @@ const LeagueSelector = () => {
 
             <div className='search'>
             <label> Search Pokemon</label>
-                <input
+            <input
                     type="text"
-                    value={searchPokemon}
+                    value={tempSearchPokemon}
                     placeholder='Name or number'
                     onChange={(e) => {
-                    setSearchPokemon(e.target.value);
-                    setVisible('');
+                        setTempSearchPokemon(e.target.value);
                     }}
+                    
                 />
+                <button onClick={() => {
+                        setSearchPokemon(tempSearchPokemon);
+                        setVisible('');
+                    }}>
+                    Search
+                </button>
             </div>
 
             <div className='buttons'>

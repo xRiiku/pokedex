@@ -30,7 +30,7 @@ function Pokedex(props) {
         .catch((error) => console.error(error));
     }, [url]);
 
-    if (!pokemonData) return <div> Loading...</div>;
+    if (!pokemonData) return <div className="error"> Pokemon not found</div>;
 
     return (
         <div className="card-pokemon">
