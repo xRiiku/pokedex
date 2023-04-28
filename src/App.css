@@ -110,11 +110,11 @@ body {
 }
 /* Globales */
 .container {
-	max-width: 1200px;
+	width: 100%;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 3rem;
+	gap: 2rem;
 	text-align: center;
 	padding-top: 2rem;
 }
@@ -140,6 +140,11 @@ font-size: 30pt;
 .card-pokemon {
 	cursor: pointer;
 	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
 }
 
 .card-img {
@@ -148,6 +153,7 @@ font-size: 30pt;
 	align-items: center;
 	justify-content: center;
 	border-radius: 30%;
+	width: 300px;
 	height: 250px;
 }
 
@@ -180,21 +186,21 @@ font-size: 30pt;
 	border-radius: 30%;
 	color: #fff;
 }
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 1025px) {
 	.container {
 		gap: 1rem;
 	}
 	
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 950px) {
 	.container {
 		grid-template-columns: repeat(2, 1fr);
 	}
 	
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 635px) {
 	.container {
 		grid-template-columns: repeat(1, 1fr);
 	}
